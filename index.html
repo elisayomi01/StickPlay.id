@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StickPlay.id</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <header>
+    <h1>StickPlay</h1>
+    <nav>
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Main PS Sepuasnya!</h2>
+    <p>Tempat nyaman, harga hemat, dan banyak pilihan game!</p>
+  </section>
+
+  <section id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>Kami menyediakan rental PS4 & PS5 dengan harga terjangkau dan tempat nyaman.</p>
+  </section>
+
+  <section id="layanan">
+    <h2>Layanan</h2>
+    <ul>
+      <li>PS4 - Rp10.000/jam</li>
+      <li>PS5 - Rp15.000/jam</li>
+      <li>Buka: 10.00 - 22.00 WIB</li>
+    </ul>
+  </section>
+
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="carousel">
+      <img src="WhatsApp Image 2025-05-27 at 16.45.06.jpeg" alt="Ruang rental">
+      <img src="WhatsApp Image 2025-05-27 at 16.45.06 (1).jpeg" alt="PlayStation setup">
+      <img src="WhatsApp Image 2025-05-27 at 16.45.06 (2).jpeg" alt="Game setup">
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+    <p>📍 Jl.Raya Abepura, Abepura</p>
+    <p>📞 0812-3456-1006</p>
+    ===================================================
+    <form id="contact-form">
+      <input type="text" placeholder="Nama" required>
+      <input type="Phone number" placeholder=" Phone" required>
+      <textarea placeholder="Pesan" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+    <div id="thank-you-message" style="display: none; margin-top: 20px; color: #4a148c; font-weight: bold;">
+      Terima kasih untuk pesanan Anda! Kami akan menghubungi Anda segera.
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rental StickPlay</p>
+  </footer>
+
+  <script>
+    // Simple image carousel functionality
+    const images = document.querySelectorAll('.carousel img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.style.display = (i === index) ? 'block' : 'none';
+      });
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+    setInterval(nextImage, 3000); // Change image every 3 seconds
+
+    // Handle form submission
+    const contactForm = document.getElementById('contact-form');
+    const thankYouMessage = document.getElementById('thank-you-message');
+
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      contactForm.reset(); // Reset the form fields
+      thankYouMessage.style.display = 'block'; // Show thank you message
+    });
+  </script>
+</body>
+</html>
